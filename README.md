@@ -22,12 +22,6 @@ CSS3 → Estilização e responsividade
 
 JavaScript → Interatividade e lógica
 
-## 📥 Como executar
-Clone este repositório:
-```bash
-git clone https://github.com/galcantara07/desafio-frontend-estagio.git
-Abra o arquivo index.html diretamente no navegador ou utilize uma extensão de servidor local como Live Server no VS Code.
-```
 ## 📂 Estrutura de pastas
 ```bash
 /
@@ -36,6 +30,13 @@ Abra o arquivo index.html diretamente no navegador ou utilize uma extensão de s
     ├── style.css
 └── js
     └── app.js
+```
+
+## 📥 Como executar
+Clone este repositório:
+```bash
+git clone https://github.com/galcantara07/desafio-frontend-estagio.git
+Abra o arquivo index.html diretamente no navegador ou utilize uma extensão de servidor local como Live Server no VS Code.
 ```
 
 ## ⭐ Resultados 
