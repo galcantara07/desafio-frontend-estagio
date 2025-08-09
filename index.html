@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Cadastro Fornecedor / Produto</title>
+
+  <!-- Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Cadastro Fornecedor/Produto</h1>
+
+    <form id="supplierForm" novalidate>
+      <!-- DADOS DO FORNECEDOR -->
+      <section class="card">
+        <div class="card-header">Dados do Fornecedor</div>
+        <div class="card-body">
+          <div class="row">
+            <label class="field">
+              <span>Razão Social *</span>
+              <input type="text" id="razao" name="razao" required>
+            </label>
+
+            <label class="field">
+              <span>CNPJ *</span>
+              <input type="text" id="cnpj" name="cnpj" required>
+            </label>
+          </div>
+
+          <div class="row">
+            <label class="field">
+              <span>Nome Fantasia *</span>
+              <input type="text" id="fantasia" name="fantasia" required>
+            </label>
+
+            <label class="field">
+              <span>Inscrição Estadual</span>
+              <input type="text" id="inscEst" name="inscEst">
+            </label>
+          </div>
+
+          <div class="row">
+            <label class="field small">
+              <span>CEP *</span>
+              <input type="text" id="cep" name="cep" required placeholder="00000-000">
+            </label>
+
+            <label class="field">
+              <span>Inscrição Municipal</span>
+              <input type="text" id="inscMun" name="inscMun">
+            </label>
+          </div>
+
+          <div class="row">
+            <label class="field">
+              <span>Endereço *</span>
+              <input type="text" id="endereco" name="endereco" required>
+            </label>
+
+            <label class="field small">
+              <span>Número</span>
+              <input type="text" id="numero" name="numero">
+            </label>
+          </div>
+
+          <div class="row">
+            <label class="field">
+              <span>Complemento</span>
+              <input type="text" id="complemento" name="complemento">
+            </label>
+          </div>
+
+          <div class="row">
+            <label class="field small">
+              <span>Bairro</span>
+              <input type="text" id="bairro" name="bairro">
+            </label>
+
+            <label class="field">
+              <span>Município</span>
+              <input type="text" id="municipio" name="municipio">
+            </label>
+
+            <label class="field small">
+              <span>Estado</span>
+              <input type="text" id="estado" name="estado">
+            </label>
+          </div>
+
+          <div class="row">
+            <label class="field">
+              <span>Nome da Pessoa de Contato *</span>
+              <input type="text" id="contato" name="contato" required>
+            </label>
+
+            <label class="field small">
+              <span>Telefone *</span>
+              <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000">
+            </label>
+
+            <label class="field">
+              <span>E-mail *</span>
+              <input type="email" id="email" name="email" required>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUTOS -->
+      <section class="card">
+        <div class="card-header">Produtos</div>
+        <div class="card-body">
+          <div id="productsContainer"></div>
+
+          <div class="actions-row">
+            <button type="button" id="addProduct" class="btn btn-primary">Adicionar Produto</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANEXOS -->
+      <section class="card">
+        <div class="card-header">Anexos</div>
+        <div class="card-body">
+          <div class="row">
+            <input type="file" id="fileInput" />
+            <button type="button" id="includeAttachment" class="btn btn-primary">Incluir Anexo</button>
+          </div>
+
+          <ul id="attachmentsList" class="attachments-list"></ul>
+        </div>
+      </section>
+
+      <div class="actions-bottom">
+        <button type="button" id="saveSupplier" class="btn btn-success">Salvar Fornecedor</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Modal de carregamento -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <div class="spinner"></div>
+      <p>Enviando... preparando JSON</p>
+      <pre id="jsonOutput" class="json-output" hidden></pre>
+      <div class="modal-actions" hidden id="modalActions">
+        <button id="downloadJson" class="btn">Baixar JSON</button>
+        <button id="closeModal" class="btn btn-secondary">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

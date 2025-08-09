@@ -1,0 +1,176 @@
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --accent1: #0f62fe; /* azul */
+  --accent2: #6c42f5; /* roxo */
+  --muted:#8a8f98;
+  --success:#0aa24a;
+  --danger:#e23b3b;
+  --input-bg:#fbfdff;
+  --shadow: 0 6px 16px rgba(20,20,40,0.06);
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#eef2fb);
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:24px;
+}
+
+.container{
+  max-width:980px;
+  margin:0 auto 40px;
+}
+
+h1{
+  text-align:center;
+  font-weight:600;
+  margin-bottom:18px;
+  color:var(--accent2);
+}
+
+/* Card */
+.card{
+  background:var(--card);
+  border-radius:8px;
+  margin-bottom:18px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(0,0,0,0.06);
+  overflow:hidden;
+}
+.card-header{
+  background: linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:white;
+  padding:10px 16px;
+  font-weight:600;
+}
+.card-body{
+  padding:14px 16px;
+}
+
+/* Fields */
+.row{
+  display:flex;
+  gap:12px;
+  margin-bottom:12px;
+  flex-wrap:wrap;
+}
+.field{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+.field.small{max-width:220px}
+.field span{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+.field input, .field select{
+  padding:10px 12px;
+  border-radius:6px;
+  border:1px solid rgba(20,20,40,0.08);
+  background:var(--input-bg);
+  outline:none;
+  font-size:14px;
+}
+.field input:focus{box-shadow:0 0 0 4px rgba(108,66,245,0.08);border-color:var(--accent2)}
+
+/* Buttons */
+.btn{
+  background:transparent;
+  border:1px solid rgba(20,20,40,0.08);
+  padding:10px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{
+  background: linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:white;
+  border:none;
+}
+.btn-secondary{
+  background:#eef2fb;
+  color:var(--accent2);
+}
+.btn-success{
+  background: linear-gradient(90deg,#0aa24a,#1fb97a);
+  color:white;
+  border:none;
+}
+.actions-row{display:flex;justify-content:center;margin-top:12px}
+.actions-bottom{display:flex;justify-content:center;margin-top:14px}
+
+/* Product item */
+.product{
+  border:1px solid rgba(0,0,0,0.06);
+  border-radius:8px;
+  padding:12px;
+  margin-bottom:12px;
+  position:relative;
+  background:linear-gradient(180deg,#ffffff,#fcfdff);
+}
+.product .remove{
+  position:absolute;
+  left:-16px;
+  top:12px;
+  background:var(--danger);
+  color:white;
+  border-radius:6px;
+  padding:8px;
+  border:none;
+  cursor:pointer;
+  box-shadow:0 6px 12px rgba(0,0,0,0.06);
+}
+.product .row{align-items:center}
+.product .label-inline{min-width:110px;color:var(--muted);font-size:13px}
+
+/* Attachments */
+.attachments-list{list-style:none;padding:0;margin:8px 0}
+.attachments-list li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:8px;
+  border:1px solid rgba(0,0,0,0.05);
+  margin-bottom:8px;
+  border-radius:6px;
+  background:#fff;
+}
+.icon{
+  width:38px;height:38px;border-radius:6px;background:linear-gradient(180deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;
+}
+
+/* Modal */
+.modal{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,10,20,0.4);z-index:9999;
+}
+.modal.hidden{display:none}
+.modal-content{
+  background:white;padding:22px;border-radius:8px;min-width:320px;max-width:720px;text-align:center;
+}
+.spinner{
+  width:48px;height:48px;margin:6px auto 12px;border-radius:50%;border:6px solid #ededf2;border-top-color:var(--accent2);
+  animation:spin 1s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.json-output{
+  text-align:left;
+  max-height:300px;
+  overflow:auto;
+  background:#f7f9ff;padding:12px;border-radius:6px;margin-top:12px;border:1px solid rgba(0,0,0,0.04)
+}
+
+/* Responsividade */
+@media (max-width:760px){
+  .row{flex-direction:column}
+  .field.small{max-width:100%}
+  .product .remove{left:unset; right:8px}
+}
