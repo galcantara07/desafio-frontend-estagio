@@ -48,7 +48,7 @@ Abra o arquivo index.html diretamente no navegador ou utilize uma extensão de s
   </i>
 
 ## 📌Sobre o Autor
-Desenvolvido por Gabriella Alcântara👨‍💻
+Desenvolvido por Gabriella Alcântara :princess:
 
 <a href = "https://www.contato.gabriellalcantara@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
 <a href="https://www.linkedin.com/in/gabriellalcantara" ><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
